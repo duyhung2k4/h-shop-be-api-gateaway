@@ -15,3 +15,7 @@ func GetAppPort() string {
 func GetUrlAccountService() string {
 	return urlAccountService
 }
+
+func GetUrlShopService() string {
+	return urlShopService
+}

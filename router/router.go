@@ -29,6 +29,17 @@ func Router() http.Handler {
 
 			proxy.ServeHTTP(w, req)
 		}))
+
+		r.Handle("/shop/*", http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
+			backendURL, _ := url.Parse(config.GetUrlShopService())
+			proxy := httputil.NewSingleHostReverseProxy(backendURL)
+
+			req.URL.Host = backendURL.Host
+			req.URL.Scheme = backendURL.Scheme
+			req.Header.Set("Host", backendURL.Host)
+
+			proxy.ServeHTTP(w, req)
+		}))
 	})
 
 	return app
