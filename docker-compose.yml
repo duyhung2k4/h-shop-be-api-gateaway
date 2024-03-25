@@ -1,28 +1,30 @@
 version: '3.3'
 
 networks:
-  nw-test:
+  nw_api_test:
     driver: bridge
-
+  
 volumes:
-  disk_test:
+  disk_api_test:
     driver_opts:
       device: /usr/local/data/
       o: bind
       type: none
 
 services:
-  go-test-api-1:
-    container_name: go-test-api-name-1
+  api_test:
+    container_name: api_name_test
+    hostname: api_hostname_test
     build: 
       dockerfile: Dockerfile
       context: .
-    hostname: go-test-api-hostname-1
     networks:
-      - nw-test
+      - nw_api_test
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
-      - disk_test:/usr/local/data/
-    stdin_open: true
-    tty: true
+      - disk_api_test:/usr/local/data
     ports:
       - "18880:18880"
+    stdin_open: true
+    tty: true
