@@ -13,4 +13,16 @@ volumes:
 
 services:
   go-test-api-1:
-    container_name: 
+    container_name: go-test-api-name-1
+    build: 
+      dockerfile: Dockerfile
+      context: .
+    hostname: go-test-api-hostname-1
+    networks:
+      - nw-test
+    volumes:
+      - disk_test:/usr/local/data/
+    stdin_open: true
+    tty: true
+    ports:
+      - "18880:18880"
