@@ -8,6 +8,7 @@ import (
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
+	"github.com/go-chi/render"
 )
 
 func Router() http.Handler {
@@ -19,6 +20,11 @@ func Router() http.Handler {
 	app.Use(middleware.Recoverer)
 
 	app.Route("/", func(r chi.Router) {
+		r.Get("/ping", func(w http.ResponseWriter, r *http.Request) {
+			render.JSON(w, r, map[string]interface{}{
+				"text": "pong",
+			})
+		})
 		r.Handle("/account/*", http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
 			backendURL, _ := url.Parse(config.GetUrlAccountService())
 			proxy := httputil.NewSingleHostReverseProxy(backendURL)

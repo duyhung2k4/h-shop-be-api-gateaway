@@ -1,0 +1,16 @@
+version: '3.3'
+
+networks:
+  nw-test:
+    driver: bridge
+
+volumes:
+  disk_test:
+    driver_opts:
+      device: /usr/local/data/
+      o: bind
+      type: none
+
+services:
+  go-test-api-1:
+    container_name: 
