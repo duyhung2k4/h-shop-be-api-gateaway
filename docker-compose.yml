@@ -1,30 +1,27 @@
 version: '3.3'
 
-networks:
-  nw_api_test:
-    driver: bridge
-  
 volumes:
-  disk_api_test:
+  disk:
     driver_opts:
-      device: /usr/local/data/
+      device: /usr/local/data/h-shop-api-gateaway-disk
       o: bind
       type: none
 
 services:
-  api_test:
-    container_name: api_name_test
-    hostname: api_hostname_test
+  build:
+    container_name: service-h-shop-api-gateaway
+    hostname: host-h-shop-api-gateaway
     build: 
       dockerfile: Dockerfile
       context: .
-    networks:
-      - nw_api_test
+    image: h-shop-api-gateaway:v1
+    volumes:
+      - disk:/usr/local/bin/data
+    network_mode: host
     extra_hosts:
       - "host.docker.internal:host-gateway"
-    volumes:
-      - disk_api_test:/usr/local/data
     ports:
       - "18880:18880"
+      - "6379:6379"
     stdin_open: true
     tty: true
