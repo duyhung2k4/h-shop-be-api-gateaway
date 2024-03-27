@@ -22,6 +22,5 @@ services:
       - "host.docker.internal:host-gateway"
     ports:
       - "18880:18880"
-      - "6379:6379"
     stdin_open: true
     tty: true
