@@ -2,6 +2,7 @@ package router
 
 import (
 	"app/config"
+	"log"
 	"net/http"
 	"net/http/httputil"
 	"net/url"
@@ -47,6 +48,8 @@ func Router() http.Handler {
 			proxy.ServeHTTP(w, req)
 		}))
 	})
+
+	log.Println("Sevice h-shop-be-api-gateaway starting success!")
 
 	return app
 }
