@@ -3,7 +3,7 @@ version: '3.3'
 volumes:
   disk:
     driver_opts:
-      device: /usr/local/data/h-shop-api-gateaway-disk
+      device: /usr/local/data/h-shop-api-gateaway-disk/
       o: bind
       type: none
 
