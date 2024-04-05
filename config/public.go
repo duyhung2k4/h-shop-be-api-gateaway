@@ -19,3 +19,7 @@ func GetUrlAccountService() string {
 func GetUrlShopService() string {
 	return urlShopService
 }
+
+func GetUrlProductService() string {
+	return urlProductService
+}

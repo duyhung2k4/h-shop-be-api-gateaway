@@ -18,6 +18,7 @@ func loadEnv() error {
 	urlRedis = os.Getenv(URL_REDIS)
 	urlAccountService = os.Getenv(URL_ACCOUNT_SERVICE)
 	urlShopService = os.Getenv(URL_SHOP_SERVICE)
+	urlProductService = os.Getenv(URL_PRODUCT_SERVICE)
 
 	return nil
 }
