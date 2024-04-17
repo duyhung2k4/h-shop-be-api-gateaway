@@ -23,3 +23,7 @@ func GetUrlShopService() string {
 func GetUrlProductService() string {
 	return urlProductService
 }
+
+func GetUrlOrderService() string {
+	return urlOrderService
+}

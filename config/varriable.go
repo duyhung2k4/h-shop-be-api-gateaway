@@ -10,12 +10,14 @@ const (
 	URL_ACCOUNT_SERVICE = "URL_ACCOUNT_SERVICE"
 	URL_SHOP_SERVICE    = "URL_SHOP_SERVICE"
 	URL_PRODUCT_SERVICE = "URL_PRODUCT_SERVICE"
+	URL_ORDER_SERVICE   = "URL_ORDER_SERVICE"
 )
 
 var (
 	urlAccountService string
 	urlShopService    string
 	urlProductService string
+	urlOrderService   string
 
 	appPort  string
 	urlRedis string
