@@ -27,3 +27,7 @@ func GetUrlProductService() string {
 func GetUrlOrderService() string {
 	return urlOrderService
 }
+
+func GetUrlFileService() string {
+	return urlFileService
+}

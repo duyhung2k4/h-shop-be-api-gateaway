@@ -11,6 +11,7 @@ const (
 	URL_SHOP_SERVICE    = "URL_SHOP_SERVICE"
 	URL_PRODUCT_SERVICE = "URL_PRODUCT_SERVICE"
 	URL_ORDER_SERVICE   = "URL_ORDER_SERVICE"
+	URL_FILE_SERVICE    = "URL_FILE_SERVICE"
 )
 
 var (
@@ -18,6 +19,7 @@ var (
 	urlShopService    string
 	urlProductService string
 	urlOrderService   string
+	urlFileService    string
 
 	appPort  string
 	urlRedis string
