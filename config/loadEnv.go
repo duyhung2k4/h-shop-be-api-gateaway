@@ -20,6 +20,7 @@ func loadEnv() error {
 	urlShopService = os.Getenv(URL_SHOP_SERVICE)
 	urlProductService = os.Getenv(URL_PRODUCT_SERVICE)
 	urlFileService = os.Getenv(URL_FILE_SERVICE)
+	urlSearchService = os.Getenv(URL_SEARCH_SERVICE)
 
 	return nil
 }

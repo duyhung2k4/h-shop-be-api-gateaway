@@ -31,3 +31,7 @@ func GetUrlOrderService() string {
 func GetUrlFileService() string {
 	return urlFileService
 }
+
+func GetUrlSearchService() string {
+	return urlSearchService
+}

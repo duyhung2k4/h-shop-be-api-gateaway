@@ -80,6 +80,17 @@ func Router() http.Handler {
 
 			proxy.ServeHTTP(w, req)
 		}))
+
+		r.Handle("/search/*", http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
+			backendURL, _ := url.Parse(config.GetUrlSearchService())
+			proxy := httputil.NewSingleHostReverseProxy(backendURL)
+
+			req.URL.Host = backendURL.Host
+			req.URL.Scheme = backendURL.Scheme
+			req.Header.Set("Host", backendURL.Host)
+
+			proxy.ServeHTTP(w, req)
+		}))
 	})
 
 	log.Println("Sevice h-shop-be-api-gateaway starting success!")
