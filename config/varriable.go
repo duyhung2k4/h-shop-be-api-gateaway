@@ -13,6 +13,7 @@ const (
 	URL_ORDER_SERVICE   = "URL_ORDER_SERVICE"
 	URL_FILE_SERVICE    = "URL_FILE_SERVICE"
 	URL_SEARCH_SERVICE  = "URL_SEARCH_SERVICE"
+	URL_PAYMENT_SERVICE = "URL_PAYMENT_SERVICE"
 )
 
 var (
@@ -22,6 +23,7 @@ var (
 	urlOrderService   string
 	urlFileService    string
 	urlSearchService  string
+	urlPayment        string
 
 	appPort  string
 	urlRedis string

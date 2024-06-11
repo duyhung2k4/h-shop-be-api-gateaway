@@ -35,3 +35,7 @@ func GetUrlFileService() string {
 func GetUrlSearchService() string {
 	return urlSearchService
 }
+
+func GetUrlPayment() string {
+	return urlPayment
+}
